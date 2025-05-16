@@ -48,6 +48,7 @@ namespace bataille_navale_escape
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +94,7 @@ namespace bataille_navale_escape
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(795, 496);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pictureBox2
             // 
@@ -223,6 +225,12 @@ namespace bataille_navale_escape
             this.label10.TabIndex = 14;
             this.label10.Text = "|\r\n|\r\n|\r\n|\r\n";
             // 
+            // timer3
+            // 
+            this.timer3.Enabled = true;
+            this.timer3.Interval = 1000;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,6 +287,7 @@ namespace bataille_navale_escape
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Timer timer3;
     }
 }
 

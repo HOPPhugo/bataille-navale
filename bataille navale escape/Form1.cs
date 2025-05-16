@@ -28,6 +28,7 @@ namespace bataille_navale_escape
             System.Reflection.BindingFlags.SetProperty,
             null, this, new object[] { true });
         }
+        int time = 0;
         int NBRTouch = 0; // nombre de cases de bateaux touché (une case ne peut être touchée qu'une seule fois)
         int NBRcoulé = 0; // nombre de bateaux coulés ( un bateaux de peut être coulé qu'une seule fois)
         int NBRtir = 0; // quand on clique sur une case blanche le nombre de tir augmente (si la case cliquée n'est pas blanche ( donc déjà touché), le tir ne compte pas
@@ -685,6 +686,27 @@ namespace bataille_navale_escape
         private void label4_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            if (panel2.Visible == true)
+            {
+                time = time + 1;
+                if ( time == 3)
+                {
+                    Application.Restart();
+                }
+            }
+            else
+            {
+                time = 0;
+            }
         }
     }
 }
